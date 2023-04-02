@@ -1,0 +1,50 @@
+<html>
+    <head>
+        <title> 
+            <%= title %>
+        </title>
+        <link rel="stylesheet" href="/css/home.css">
+    </head>
+    <body>
+        <div id="outer-container">
+            <div id="inner-container"><h1 >Contact Lists</h1>
+            <div id = "contact-list">
+                <ol id = "list">
+                    <% for(let i of contacts_list){ %>
+                        <li id = "list-li">
+                            <!-- <div id="list-li-div"></div> -->
+                            <p><%= i.name %></p>
+                            <p> <%= i.number %></p>
+                            <div id="bin-container">
+                                <a href="/delete-contact/?id=<%= i._id %>">
+                                    <img src="/images/bin.png" alt="">
+                                </a>
+                                
+                            </div>
+                        </li>
+                        
+                    <% } %>
+                    <%if(contacts_list.length == 0) { %>
+                        <li>
+                            <p>NO Contacts</p>
+                        </li>
+                    <%}%> 
+                </ol>
+            </div>
+            <div id="new-contact-form">
+                <h4>Add a Contact</h4>
+                <form action="/creat-contact" method="POST">
+                    <input type="text" name = "name" placeholder="Enter Name" required>
+                    <br>
+                    <input type="text" name = "number" placeholder="Enter Number" required>
+                    <br>
+                    <button type = "submit">Add</button>
+                </form>
+            </div>
+        </div>
+            
+        </div>
+        
+        <script src="/js/home.js"></script>
+    </body>
+</html>
