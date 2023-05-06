@@ -17,7 +17,7 @@ app.use(express.static('assets'));
 // app.use(function(req,res,next){
 //     console.log('this is a MiddleWare');
 //     next();
-// });
+// })
 
 // this was used for creating the contact list without model or database
 // var contactsList = [
