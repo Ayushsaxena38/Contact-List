@@ -116,7 +116,10 @@ app.post('/creat-contact',(req,res)=>{
     // }
 ).then(function(result){
     console.log(result);
-});
+})
+.catch((err)=>{
+    console.log('error creating the new contact',err);
+})
 
 res.redirect('back');
 })
